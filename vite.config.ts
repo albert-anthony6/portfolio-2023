@@ -49,10 +49,10 @@ export default defineConfig({
           @use 'sass:math';
           @use 'sass:color';
           @use 'sass:map';
-          @import './src/assets/scss/variables.scss';
-          @import './src/assets/scss/mixins.scss';
-          @import './src/assets/scss/functions.scss';
-          @import './src/assets/scss/animations.scss';
+          @import './src/assets/scss/_variables.scss';
+          @import './src/assets/scss/_mixins.scss';
+          @import './src/assets/scss/_functions.scss';
+          @import './src/assets/scss/_animations.scss';
         `,
       },
     },

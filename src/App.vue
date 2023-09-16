@@ -9,7 +9,7 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style lang="scss">
-@import '@/assets/scss/theme.scss';
+@import '@/assets/scss/_theme.scss';
 
 #app {
   -webkit-font-smoothing: antialiased;
@@ -18,6 +18,6 @@ import { RouterView } from 'vue-router'
 }
 
 .page {
-  padding: 80px 120px;
+  padding: 80px 0;
 }
 </style>

@@ -1,5 +1,3 @@
-<script></script>
-
 <template>
     <section class="projects">
         <h2>Portfolio Showcase</h2>
@@ -35,6 +33,8 @@
 
 <style lang="scss" scoped>
 .projects {
+    height: 100vh;
+
     h2 {
         font-weight: 300;
     }
@@ -50,7 +50,7 @@
         display: flex;
         align-items: stretch;
         justify-content: space-between;
-        margin: 50px auto 0;
+        margin: 50px auto;
 
         .card {
             perspective: 5000px;
@@ -70,7 +70,7 @@
                 border-radius: 8px;
 
                 &--front {
-                    background-image: linear-gradient(to right bottom, blue, green);
+                    background-color: #c2c2c2;
                 }
                 
                 &--back {
