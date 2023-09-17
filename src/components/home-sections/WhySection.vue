@@ -30,11 +30,22 @@
   <style scoped lang="scss">
   .why {
     min-height: 100vh;
-
+    
     position: relative;
     background: url('@/assets/images/why_me_bg.jpg') no-repeat fixed center/cover;
     padding: 275px 0 275px 0;
     clip-path: polygon(0 20%, 100% 0, 100% 78%, 0 100%);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle, transparent 50%, #17001b 95%);
+      z-index: -1;
+    }
 
     h2 {
       font-weight: 300;

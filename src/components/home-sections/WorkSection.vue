@@ -1,7 +1,10 @@
 <script lang="ts" setup>
 import IconAudiLogo from '@/assets/icons/icon_audi_logo.svg';
 import IconCadillacLogo from '@/assets/icons/icon_cadillac_logo.svg';
-import IconWolksWagenLogo from '@/assets/icons/icon_volkswagen_logo.svg';
+import IconVolkswagenLogo from '@/assets/icons/icon_volkswagen_logo.svg';
+import IconBMWLogo from '@/assets/icons/icon_bmw_logo.svg';
+import IconPorscheLogo from '@/assets/icons/icon_porsche_logo.svg';
+import IconUSPSLogo from '@/assets/icons/icon_usps_logo.svg';
 import projects from '@/utils/work-projects';
 
 const emit = defineEmits(['toggle-modal'])
@@ -25,7 +28,11 @@ const getImageUrl = (name: string) => {
             <ul>
                 <li><IconAudiLogo /> Audi</li>
                 <li><IconCadillacLogo /> Cadillac</li>
-                <li><IconWolksWagenLogo /> Volkswagen</li>
+                <li><IconVolkswagenLogo /> Volkswagen</li>
+                <li><IconBMWLogo /> BMW</li>
+                <li><IconPorscheLogo /> Porsche</li>
+                <li><IconUSPSLogo /> USPS</li>
+                <li>General Motors</li>
                 <li>Electrify America</li>
                 <li>Ghallagher-Kaiser</li>
             </ul>
@@ -61,7 +68,8 @@ const getImageUrl = (name: string) => {
     }
 
     svg {
-        width: 60px;
+        /* width: 60px; */
+        width: 2.4em;
         vertical-align: middle;
     }
 
@@ -78,8 +86,11 @@ const getImageUrl = (name: string) => {
 
         ul {
             display: flex;
+            width: 60%;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+            margin: 0 auto;
 
             li {
                 font-size: rem(25);
@@ -87,8 +98,10 @@ const getImageUrl = (name: string) => {
 
                 &:first-child {
                     margin-left: 0;
+
                     svg {
-                        width: 80px;
+                        /* width: 80px; */
+                        width: 3.2em;
                         margin-top: -3px;
                     }
                 }
@@ -112,7 +125,7 @@ const getImageUrl = (name: string) => {
                 width: 100%;
                 height: 100%;
                 opacity: 0;
-                background: radial-gradient(circle, #00000078 0%, #000 100%);
+                background-image: radial-gradient(circle, #00000078 0%, #000 100%);
                 transition: all 0.5s ease;
                 padding: 25px;
 
