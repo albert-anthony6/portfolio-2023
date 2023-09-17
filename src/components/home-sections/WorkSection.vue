@@ -4,6 +4,8 @@ import IconCadillacLogo from '@/assets/icons/icon_cadillac_logo.svg';
 import IconWolksWagenLogo from '@/assets/icons/icon_volkswagen_logo.svg';
 import projects from '@/utils/work-projects';
 
+const emit = defineEmits(['toggle-modal'])
+
 const modules: any = import.meta.glob('../../assets/images/work/*.jpg', { eager: true });
 
 const getImageUrl = (name: string) => {
@@ -36,7 +38,7 @@ const getImageUrl = (name: string) => {
                 <div class="content">
                     <div class="project-title">{{ project.title }}</div>
                     <p>{{ project.description }}</p>
-                    <button>View Image</button>
+                    <button @click="emit('toggle-modal', `src/assets/images/work/${project.name}`)" type="button">View Image</button>
                 </div>
                 <img :src="getImageUrl(project.name)" />
             </div>

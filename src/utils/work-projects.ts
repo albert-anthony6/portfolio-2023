@@ -9,7 +9,7 @@ const projects: Project[] = [
     {
         name: 'audi_lxp_cms_login.jpg',
         title: 'Audi LXP CMS',
-        description: 'I built a custom SSO login for admins of the Audi LXP! I was the maind frontend dev for this LXP spinoff.'
+        description: 'I built a custom SSO login for admins of the Audi LXP! I was the main frontend dev for this LXP spinoff.'
     },
     {
         name: 'audi_cms.jpg',

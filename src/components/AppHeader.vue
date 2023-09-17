@@ -27,7 +27,7 @@ ul {
     left: 0;
     background-color: rgba($darkest-neutral, 0.5);
     padding: 25px 50px;
-    z-index: 999;
+    z-index: 998;
     backdrop-filter: blur(30px);
 
     ul {

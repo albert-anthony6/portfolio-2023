@@ -1,9 +1,21 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import AppModal from '@/components/AppModal.vue';
 import MainSection from '@/components/home-sections/MainSection.vue';
 import ProjectsSection from '@/components/home-sections/ProjectsSection.vue';
 import SkillsSection from '@/components/home-sections/SkillsSection.vue';
 import WhySection from '@/components/home-sections/WhySection.vue';
 import WorkSection from '@/components/home-sections/WorkSection.vue';
+
+const isModalOpen = ref(false);
+const modalImg = ref('');
+
+function toggleModal(payload: string) {
+  if (!isModalOpen.value) {
+    modalImg.value = payload;
+  }
+  isModalOpen.value = !isModalOpen.value;
+}
 </script>
 
 <template>
@@ -12,7 +24,8 @@ import WorkSection from '@/components/home-sections/WorkSection.vue';
     <ProjectsSection  id="projects" />
     <SkillsSection id="skills" />
     <WhySection id="why-me" />
-    <WorkSection id="work" />
+    <WorkSection @toggle-modal="toggleModal($event)" id="work" />
+    <AppModal v-if="isModalOpen" :imgPath="modalImg" @toggle-modal="toggleModal" />
   </div>
 </template>
 
