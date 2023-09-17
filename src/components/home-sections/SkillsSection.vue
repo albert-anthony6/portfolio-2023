@@ -15,7 +15,7 @@
                 <div class="tag">Vue</div>
                 <div class="tag">React</div>
                 <div class="tag">State Management</div>
-                <div class="tag">Debuging</div>
+                <div class="tag">Debugging</div>
                 <div class="tag">Validation</div>
                 <div class="tag">APIs</div>
             </div>

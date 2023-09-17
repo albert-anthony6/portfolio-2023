@@ -3,6 +3,7 @@ import MainSection from '@/components/home-sections/MainSection.vue';
 import ProjectsSection from '@/components/home-sections/ProjectsSection.vue';
 import SkillsSection from '@/components/home-sections/SkillsSection.vue';
 import WhySection from '@/components/home-sections/WhySection.vue';
+import WorkSection from '@/components/home-sections/WorkSection.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import WhySection from '@/components/home-sections/WhySection.vue';
     <ProjectsSection  id="projects" />
     <SkillsSection id="skills" />
     <WhySection id="why-me" />
+    <WorkSection id="work" />
   </div>
 </template>
 
@@ -18,7 +20,7 @@ import WhySection from '@/components/home-sections/WhySection.vue';
 .home {
   margin-top: 130px;
 
-  *:not(#why-me) {
+  *:not(#why-me, #work) {
     padding: 0 120px;
   }
 }
