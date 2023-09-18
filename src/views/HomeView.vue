@@ -31,10 +31,20 @@ function toggleModal(payload: string) {
 
 <style lang="scss" scoped>
 .home {
-  margin-top: 130px;
+  /* padding-top: 210px; */
+  /* padding-top: 22vh; */
+  #home,
+  #skills,
+  #work {
+    /* background-color: blue; */
+  }
+  #projects,
+  #why-me {
+    /* background-color: green; */
+  }
 
   *:not(#why-me, #work) {
-    padding: 0 120px;
+    /* padding: 0 40px; */
   }
 }
 </style>

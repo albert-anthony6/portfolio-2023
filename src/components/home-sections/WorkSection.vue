@@ -68,7 +68,6 @@ const getImageUrl = (name: string) => {
     }
 
     svg {
-        /* width: 60px; */
         width: 2.4em;
         vertical-align: middle;
     }
@@ -100,7 +99,6 @@ const getImageUrl = (name: string) => {
                     margin-left: 0;
 
                     svg {
-                        /* width: 80px; */
                         width: 3.2em;
                         margin-top: -3px;
                     }
@@ -119,6 +117,7 @@ const getImageUrl = (name: string) => {
             position: relative;
             width: 25%;
             max-height: 270px;
+            max-height: 14vw;
 
             .content {
                 position: absolute;

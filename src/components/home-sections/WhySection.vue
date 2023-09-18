@@ -29,12 +29,22 @@
   
   <style scoped lang="scss">
   .why {
-    min-height: 100vh;
-    
     position: relative;
+    padding: 200px 0 150px 0;
+    margin-top: 120px;
+    min-height: calc(100vh - 120px);
     background: url('@/assets/images/why_me_bg.jpg') no-repeat fixed center/cover;
-    padding: 275px 0 275px 0;
-    clip-path: polygon(0 20%, 100% 0, 100% 78%, 0 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    
+    @include bp-sm-phone-landscape {
+      padding: 250px 0 250px 0;
+      clip-path: polygon(0 10%, 100% 0, 100% 88%, 0 100%);
+    }
+    
+    @include bp-lg-laptop {
+      padding: 275px 0 275px 0;
+      clip-path: polygon(0 20%, 100% 0, 100% 78%, 0 100%);
+    }
     
     &::after {
       content: '';
@@ -46,7 +56,7 @@
       background: radial-gradient(circle, transparent 50%, #17001b 95%);
       z-index: -1;
     }
-
+    
     h2 {
       font-weight: 300;
       margin-bottom: 25px;
@@ -54,9 +64,15 @@
   
     .cards-container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: stretch;
+      align-items: center;
       padding: 0 25px;
+      
+      @include bp-lg-laptop {
+        flex-direction: row;
+        align-items: stretch;
+      }
   
       .card {
         max-width: 300px;
@@ -65,14 +81,21 @@
         border-radius: 7px;
         box-shadow: 0 0 10px $darkest-neutral;
         transition: all 0.2s;
+        margin-bottom: 15px;
 
-        &:hover {
-          transform: translateY(-20px);
-          box-shadow: 0 0 20px $darkest-neutral;
+        @include bp-lg-laptop {
+          margin-bottom: 0;
+
+          &:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 0 20px $darkest-neutral;
+          }
         }
 
         &:nth-child(2) {
-          margin: 0 50px;
+          @include bp-lg-laptop {
+            margin: 0 50px;
+          }
         }
 
         &-title {

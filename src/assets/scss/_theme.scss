@@ -28,13 +28,10 @@ a {
     color: inherit
 }
 
-h1 {
-    font-size: rem(72);
-    line-height: 40px;
-}
-
 h2 {
     font-size: rem(52);
+    line-height: 1;
+    margin-bottom: 15px;
 }
 
 ul {

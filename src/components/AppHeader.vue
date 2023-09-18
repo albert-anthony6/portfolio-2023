@@ -4,9 +4,10 @@
     <div class="app-header">
         <font-awesome-icon class="fa-icon" icon="fa-solid fa-code" />
         <ul>
-            <li>Home</li>
-            <li>Projects</li>
-            <li>About</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#why-me">About</a></li>
             <li>Let's Connect</li>
         </ul>
     </div>
@@ -26,7 +27,7 @@ ul {
     top: 0;
     left: 0;
     background-color: rgba($darkest-neutral, 0.5);
-    padding: 25px 50px;
+    padding: 25px 40px;
     z-index: 998;
     backdrop-filter: blur(30px);
 

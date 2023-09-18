@@ -18,6 +18,6 @@ import { RouterView } from 'vue-router'
 }
 
 .page {
-  padding: 80px 0;
+  /* padding-top: 80px; */
 }
 </style>

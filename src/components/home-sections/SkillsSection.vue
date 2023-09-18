@@ -2,8 +2,9 @@
     <section class="skills">
         <h2>Skills & Tools</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
+        <h3 class="mobile-category">Skills</h3>
         <div class="skills-container">
-            <h3>Skills</h3>
+            <h3 class="desktop-category">Skills</h3>
             <div class="list">
                 <div class="tag">Semantic HTML5</div>
                 <div class="tag">Responsive CSS3</div>
@@ -20,8 +21,9 @@
                 <div class="tag">APIs</div>
             </div>
         </div>
+        <h3 class="mobile-category">Tools</h3>
         <div class="tools-container">
-            <h3>Tools</h3>
+            <h3 class="desktop-category">Tools</h3>
             <div class="list">
                 <div class="tag">Github</div>
                 <div class="tag">Bitbucket</div>
@@ -41,14 +43,16 @@
 <style lang="scss" scoped>
 .skills {
     width: 80%;
-    height: 80vh;
     margin: 0 auto;
+    padding-top: 120px;
+    min-height: calc(100vh - 120px);
 
     h2 {
         font-weight: 300;
     }
 
-    h3 {
+    .desktop-category {
+        display: none;
         font-size: rem(30);
         width: 50px;
         padding: 15px;
@@ -58,6 +62,21 @@
         line-height: 1;
         word-break: break-all;
         -ms-word-break: break-all;
+
+        @include bp-custom-min(650) {
+            display: block;
+        }
+    }
+
+    .mobile-category {
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: rem(32);
+        margin-top: 15px;
+        
+        @include bp-custom-min(650) {
+            display: none;
+        }
     }
     
     p {
@@ -84,16 +103,28 @@
     .skills-container,
     .tools-container {
         display: flex;
+        width: 100%;
         align-items: center;
-        max-width: 35vw;
-        margin-top: 25px;
+        
+        @include bp-custom-min(650) {
+            margin-top: 25px;
+            width: 500px;
+        }
+
+        @include bp-custom-min(850) {
+            width: 620px;
+        }
 
         .list {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-left: 15px;
             padding-bottom: 15px;
+            
+            @include bp-custom-min(650) {
+                margin-left: 15px;
+                justify-content: flex-start;
+            }
         }
     }
 
@@ -103,7 +134,10 @@
 
         .list {
             flex-direction: row-reverse;
-            margin: 0 15px 0 0;
+            
+            @include bp-custom-min(650) {
+                margin: 0 15px 0 0;
+            }
         }
     }
 }

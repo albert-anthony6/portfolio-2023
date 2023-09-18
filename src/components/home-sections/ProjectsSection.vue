@@ -33,7 +33,8 @@
 
 <style lang="scss" scoped>
 .projects {
-    height: 100vh;
+    padding-top: 120px;
+    min-height: calc(100vh - 120px);
 
     h2 {
         font-weight: 300;
@@ -48,16 +49,36 @@
     .showcase {
         width: 80%;
         display: flex;
-        align-items: stretch;
+        align-items: center;
+        flex-direction: column;
         justify-content: space-between;
         margin: 50px auto;
+        
+        @include bp-lg-laptop {
+            align-items: stretch;
+            flex-direction: row;
+        }
 
         .card {
             perspective: 5000px;
             position: relative;
-            width: 30%;
-            min-height: 500px;
-            max-width: 400px;
+            width: 80%;
+            min-height: 40vw;
+            
+            &:not(:last-child) {
+                margin-bottom: 15px; 
+            }
+            
+            @include bp-md-tablet {
+                width: 50%;
+            }
+            
+            @include bp-lg-laptop {
+                width: 32%;
+                min-height: 30vw;
+                max-width: 400px;
+                margin-bottom: 0;
+            }
             
             &__side {
                 position: absolute;
