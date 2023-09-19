@@ -34,8 +34,12 @@ defineProps<Props>();
         margin: 100px auto 0;
 
         img {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            width: 80%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 90%;
             border-radius: 8px;
         }
     }

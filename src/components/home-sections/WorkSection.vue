@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
+import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
+import 'vue3-carousel/dist/carousel.css'
 import IconAudiLogo from '@/assets/icons/icon_audi_logo.svg';
 import IconCadillacLogo from '@/assets/icons/icon_cadillac_logo.svg';
 import IconVolkswagenLogo from '@/assets/icons/icon_volkswagen_logo.svg';
@@ -14,6 +17,12 @@ const modules: any = import.meta.glob('../../assets/images/work/*.jpg', { eager:
 const getImageUrl = (name: string) => {
     const path = `../../assets/images/work/${name}`;
     return modules[path].default;
+}
+
+const currentSlide = ref(0);
+
+function slideTo(val: number) {
+    currentSlide.value = val
 }
 </script>
 
@@ -49,6 +58,28 @@ const getImageUrl = (name: string) => {
                 </div>
                 <img :src="getImageUrl(project.name)" />
             </div>
+        </div>
+        <div class="carousels">
+            <Carousel id="gallery" :items-to-show="1" :autoplay="5000" :wrap-around="true" v-model="currentSlide">
+                <Slide v-for="slide in projects.length" :key="slide">
+                    <!-- <div class="carousel__item">{{ slide }}</div> -->
+                    <img :src="getImageUrl(projects[slide - 1].name)" class="main-carousel__item" />
+                </Slide>
+            </Carousel>
+            <div class="project-title">{{ projects[currentSlide].title }}</div>
+            <p>{{ projects[currentSlide].description }}</p>
+            <Carousel
+                id="thumbnails"
+                :items-to-show="4"
+                :wrap-around="true"
+                v-model="currentSlide"
+                ref="carousel"
+            >
+                <Slide v-for="slide in projects.length" :key="slide">
+                    <!-- <div class="carousel__item" @click="slideTo(slide - 1)">{{ slide }}</div> -->
+                    <img :src="getImageUrl(projects[slide - 1].name)" class="sub-carousel__item" @click="slideTo(slide - 1)" />
+                </Slide>
+            </Carousel>
         </div>
     </div>
 </template>
@@ -108,37 +139,73 @@ const getImageUrl = (name: string) => {
     }
 
     .professional-projects {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-        margin-top: 30px;
+        display: none;
+/*         
+        @include bp-lg-laptop {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            margin-top: 30px;
+        } */
 
         .project-details {
             position: relative;
             width: 25%;
-            max-height: 270px;
             max-height: 14vw;
 
             .content {
                 position: absolute;
+                font-size: rem(8);
                 width: 100%;
                 height: 100%;
                 opacity: 0;
                 background-image: radial-gradient(circle, #00000078 0%, #000 100%);
                 transition: all 0.5s ease;
-                padding: 25px;
+                padding: 15px 10px;
+                
+                @include bp-xl-desktop {
+                    font-size: rem(9);
+                }
+                
+                @include bp-custom-min(1360) {
+                    padding: 25px;
+                }
+                
+                @include bp-xxl-desktop-large {
+                    font-size: rem(10);
+                }
 
                 &:hover {
                     opacity: 1;
                 }
 
                 .project-title {
-                    font-size: rem(20);
+                    font-size: em(20, 10);
+                    line-height: 1;
                 }
 
                 p {
-                    width: 80%;
-                    margin: 15px auto 20px;
+                    width: 100%;
+                    font-size: em(16, 10);
+                    margin: 5px auto;
+                    line-height: 1.3;
+                    
+                    @include bp-custom-min(1050) {
+                        margin: 10px auto;
+                    }
+                    
+                    @include bp-custom-min(1360) {
+                        width: 80%;
+                        margin: 15px auto 20px;
+                    }
+                }
+
+                button {
+                    padding: 5px 15px;
+
+                    @include bp-custom-min(1400) {
+                        padding: 10px 20px;
+                    }
                 }
             }
 
@@ -149,5 +216,40 @@ const getImageUrl = (name: string) => {
         }
 
     }
+
+    .carousels {
+        /* @include bp-lg-laptop {
+            display: none;
+        } */
+        margin-top: 30px;
+
+        #gallery {
+            width: 60%;
+            margin: 0 auto;
+        }
+    
+        .main-carousel__item,
+        .sub-carousel__item {
+            width: 100%;
+            max-height: 30vw;
+        }
+    
+        .sub-carousel__item {
+            max-height: 14vw;
+            cursor: pointer;
+        }
+
+        .project-title {
+            font-size: rem(40);
+            margin-top: 15px;
+            font-weight: 300;
+        }
+        
+        p {
+            width: 80%;
+            margin-bottom: 15px;
+        }
+    }
+
 }
 </style>
