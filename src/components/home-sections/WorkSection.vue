@@ -26,6 +26,7 @@ function slideTo(val: number) {
 }
 
 const work = ref();
+const showCarousel = ref(false);
 
 onMounted(() => {
     work.value.style.minHeight = window.innerHeight + 'px';
@@ -55,17 +56,14 @@ onMounted(() => {
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident similique veritatis modi reiciendis est laudantium corrupti ut necessitatibus tempora praesentium esse, natus nisi atque, blanditiis impedit quam exercitationem commodi. Natus.
         </p>
-        <div class="professional-projects">
-            <div v-for="(project, idx) in projects" :key="`${project.name}-${idx}`" class="project-details">
-                <div class="content">
-                    <div class="project-title">{{ project.title }}</div>
-                    <p>{{ project.description }}</p>
-                    <button @click="emit('toggle-modal', `src/assets/images/work/${project.name}`)" type="button">View Image</button>
-                </div>
-                <img :src="getImageUrl(project.name)" />
-            </div>
+        <div class="slider" @click="currentSlide = 0">
+            <input v-model="showCarousel" type="checkbox" name="slider" class="slider-checkbox" id="sliderSwitch">
+            <label class="slider-label" for="sliderSwitch">
+                <span class="slider-inner"></span>
+                <span class="slider-circle"></span>
+            </label>
         </div>
-        <div class="carousels">
+        <div v-if="showCarousel" class="carousels">
             <Carousel id="gallery" :items-to-show="1" :autoplay="5000" :wrap-around="true" v-model="currentSlide">
                 <Slide v-for="slide in projects.length" :key="slide">
                     <!-- <div class="carousel__item">{{ slide }}</div> -->
@@ -86,6 +84,16 @@ onMounted(() => {
                     <img :src="getImageUrl(projects[slide - 1].name)" class="sub-carousel__item" @click="slideTo(slide - 1)" />
                 </Slide>
             </Carousel>
+        </div>
+        <div v-else class="professional-projects">
+            <div v-for="(project, idx) in projects" :key="`${project.name}-${idx}`" class="project-details">
+                <div class="content">
+                    <div class="project-title">{{ project.title }}</div>
+                    <p>{{ project.description }}</p>
+                    <button @click="emit('toggle-modal', `src/assets/images/work/${project.name}`)" type="button">View Image</button>
+                </div>
+                <img :src="getImageUrl(project.name)" />
+            </div>
         </div>
     </div>
 </template>
@@ -145,7 +153,7 @@ onMounted(() => {
     }
 
     .professional-projects {
-        display: none;
+        /* display: none; */
 /*         
         @include bp-lg-laptop {
             display: flex;
@@ -153,6 +161,11 @@ onMounted(() => {
             align-items: stretch;
             margin-top: 30px;
         } */
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin-top: 30px;
 
         .project-details {
             position: relative;
@@ -227,7 +240,6 @@ onMounted(() => {
         /* @include bp-lg-laptop {
             display: none;
         } */
-        margin-top: 30px;
 
         #gallery {
             width: 60%;
@@ -257,5 +269,94 @@ onMounted(() => {
         }
     }
 
+    // Project View Toggle Switch Styling
+    .slider {
+        border: none;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 125px;
+        margin: 30px auto 15px;
+
+        &-checkbox {
+            display: none;
+        }
+
+        &-label {
+            border: 2px solid #666;
+            border-radius: 20px;
+            cursor: pointer;
+            display: block;
+            overflow: hidden;
+        }
+
+        &-inner {
+            display: block;
+            margin-left: -100%;
+            transition: margin 0.3s ease-in 0s;
+            width: 200%;
+
+            &::before,
+            &::after {
+                box-sizing: border-box;
+                display: block;
+                float: left;
+                font-family: sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                height: 30px;
+                line-height: 30px;
+                padding: 0;
+                width: 50%;
+            }
+
+            &::before {
+                background-image: linear-gradient(to right bottom, rgb(231, 100, 248), rgb(43, 3, 153));
+                color: #fff;
+                content: "CAROUSEL";
+                padding-right: 1.50em;
+            }
+
+            &::after {
+                background-image: linear-gradient(to right bottom, #eee, #eee);
+                color: #666;
+                content: "OVERVIEW";
+                padding-right: .75em;
+                text-align: right;
+            }
+        }
+
+        &-circle {
+            background-color: #666;
+            border: 2px solid #666;
+            border-radius: 50%;
+            bottom: 0;
+            display: block;
+            margin: 7px 5px 0;
+            position: absolute;
+            right: 91px;
+            top: 0;
+            transition: all 0.3s ease-in 0s; 
+            width: 20px;
+            height: 20px;
+            animation: wobble 2s ease infinite;
+        }
+    }
+
+    .slider-checkbox:checked + .slider-label {
+        border-color: rgb(70, 5, 78);
+    }
+    
+    .slider-checkbox:checked + .slider-label .slider-inner {
+        margin-left: 0;
+    }
+
+    .slider-checkbox:checked + .slider-label .slider-circle {
+        background-color: #eee;
+        border-color: #eee;
+        right: 3px;
+    }
 }
 </style>

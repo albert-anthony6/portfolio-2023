@@ -59,3 +59,27 @@
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     }
 }
+
+@keyframes wobble {
+    0% { 
+        transform: translateX(0%);
+    }
+    15% { 
+        transform: translateX(-15%);
+    }
+    30% {
+        transform: translateX(10%);
+    }
+    45% {
+        transform: translateX(-10%);
+    }
+    60% {
+        transform: translateX(5%);
+    }
+    75% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
