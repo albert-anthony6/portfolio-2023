@@ -10,12 +10,13 @@ html,
 body {
     font-family: $primary-font-stack;
     color: $text-color-primary;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
     background: #ff0000 url('@/assets/images/main_bg.png') no-repeat top left;
     background-size: cover;
-    overflow-x: hidden;
     cursor: default;
 }
 

@@ -2,8 +2,10 @@
 import { ref, onMounted } from 'vue';
 
 const typewriterText = ref();
+const intro = ref();
 
 onMounted(() => {
+  intro.value.style.minHeight = window.innerHeight + 'px';
   const textToType = 'I\'m a developer with over four years of experience working on the Frontend side of web applications. I began my journey in 2019 and have since really enjoyed my commitment to code daily. I strive to refine my skills with each project that I complete! My mindset is always to test new features, communicate with team members, and pay attention to detail. With that being said, I\'d love to share more detail about myself with you!';
   let currentIndex = 0;
 
@@ -21,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="intro">
+  <main class="intro" ref="intro">
     <div class="welcome-container">
       <div class="welcome">
         <h2><span class="text-cursive">Hello</span>, I'm</h2>
@@ -71,7 +73,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 .intro {
   padding-top: 210px;
-  min-height: calc(100vh - 120px);
   margin: 0 auto;
 
   .welcome-container {
@@ -80,7 +81,7 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-  
+    
   @include bp-lg-laptop {
     flex-direction: row;
     justify-content: space-between;
@@ -88,6 +89,10 @@ onMounted(() => {
   
   @include bp-custom-min(1360) {
     max-width: 80%;
+  }
+  
+  @include bp-xxl-desktop-large {
+    max-width: 1400px;
   }
 
     .welcome {

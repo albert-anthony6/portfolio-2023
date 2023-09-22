@@ -31,20 +31,15 @@ function toggleModal(payload: string) {
 
 <style lang="scss" scoped>
 .home {
-  /* padding-top: 210px; */
-  /* padding-top: 22vh; */
-  #home,
-  #skills,
-  #work {
-    /* background-color: blue; */
-  }
   #projects,
-  #why-me {
-    /* background-color: green; */
-  }
-
-  *:not(#why-me, #work) {
-    /* padding: 0 40px; */
+  #skills {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    
+    @include bp-custom-min(1360) {
+      width: 80%;
+    }
   }
 }
 </style>

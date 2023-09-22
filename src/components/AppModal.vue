@@ -21,6 +21,7 @@ defineProps<Props>();
     position: fixed;
     width: 100vw;
     height: 100vh;
+    height: 100svh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -31,6 +32,7 @@ defineProps<Props>();
     &-content {
         width: 80%;
         height: 80vh;
+        height: 80svh;
         margin: 100px auto 0;
 
         img {

@@ -1,5 +1,15 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+
+const why = ref();
+
+onMounted(() => {
+    why.value.style.minHeight = window.innerHeight + 'px';
+})
+</script>
+
 <template>
-    <section class="why">
+    <section class="why" ref="why">
       <h2>Why Work With Me?</h2>
       <div class="cards-container">
         <div class="card">
@@ -32,7 +42,6 @@
     position: relative;
     padding: 200px 0 150px 0;
     margin-top: 120px;
-    min-height: calc(100vh - 120px);
     background: url('@/assets/images/why_me_bg.jpg') no-repeat fixed center/cover;
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
     

@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router'
 
 <template>
   <AppHeader />
-  <RouterView class="page" />
+  <RouterView />
 </template>
 
 <style lang="scss">
@@ -15,9 +15,5 @@ import { RouterView } from 'vue-router'
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-.page {
-  /* padding-top: 80px; */
 }
 </style>

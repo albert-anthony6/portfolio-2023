@@ -1,11 +1,21 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+
+const projects = ref();
+
+onMounted(() => {
+    projects.value.style.minHeight = window.innerHeight + 'px';
+})
+</script>
+
 <template>
-    <section class="projects">
+    <section class="projects" ref="projects">
         <h2>Portfolio Showcase</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
         <div class="showcase">
             <div class="card">
                 <div class="card__side card__side--front">
-                    Test
+                    <img src="@/assets/images/work/gm_powertrain_dashboard.jpg" alt="">
                 </div>
                 <div class="card__side card__side--back">
                     Test2
@@ -13,7 +23,7 @@
             </div>
             <div class="card">
                 <div class="card__side card__side--front">
-                    Test
+                    <img src="@/assets/images/work/gm_powertrain_dashboard.jpg" alt="">
                 </div>
                 <div class="card__side card__side--back">
                     Test2
@@ -21,7 +31,7 @@
             </div>
             <div class="card">
                 <div class="card__side card__side--front">
-                    Test
+                    <img src="@/assets/images/work/gm_powertrain_dashboard.jpg" alt="">
                 </div>
                 <div class="card__side card__side--back">
                     Test2
@@ -34,7 +44,6 @@
 <style lang="scss" scoped>
 .projects {
     padding-top: 120px;
-    min-height: calc(100vh - 120px);
 
     h2 {
         font-weight: 300;
@@ -47,7 +56,6 @@
     }
 
     .showcase {
-        width: 80%;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -92,6 +100,14 @@
 
                 &--front {
                     background-color: #c2c2c2;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 8px;
+                    }
                 }
                 
                 &--back {

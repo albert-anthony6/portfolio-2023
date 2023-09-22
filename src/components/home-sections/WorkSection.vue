@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css'
 import IconAudiLogo from '@/assets/icons/icon_audi_logo.svg';
@@ -24,10 +24,16 @@ const currentSlide = ref(0);
 function slideTo(val: number) {
     currentSlide.value = val
 }
+
+const work = ref();
+
+onMounted(() => {
+    work.value.style.minHeight = window.innerHeight + 'px';
+})
 </script>
 
 <template>
-    <div class="work">
+    <div class="work" ref="work">
         <h2>Professional Experience</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident similique veritatis modi reiciendis est laudantium corrupti ut necessitatibus tempora praesentium esse, natus nisi atque, blanditiis impedit quam exercitationem commodi. Natus.

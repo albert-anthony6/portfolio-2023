@@ -1,5 +1,15 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+
+const skills = ref();
+
+onMounted(() => {
+    skills.value.style.minHeight = window.innerHeight + 'px';
+})
+</script>
+
 <template>
-    <section class="skills">
+    <section class="skills" ref="skills">
         <h2>Skills & Tools</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
         <h3 class="mobile-category">Skills</h3>
@@ -45,7 +55,6 @@
     width: 80%;
     margin: 0 auto;
     padding-top: 120px;
-    min-height: calc(100vh - 120px);
 
     h2 {
         font-weight: 300;
