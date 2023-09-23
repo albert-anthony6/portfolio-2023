@@ -58,10 +58,10 @@ onMounted(() => {
       </div>
     </div>
     <div class="animation-container">
-      <a href="#projects" class="projects-link">
+      <a href="#work" class="projects-link">
         <h2 class="text-cursive">
           <font-awesome-icon class="fa-icon" icon="fa-solid fa-arrow-down-long" />
-          Projects & Skills
+          Work Experience
           <font-awesome-icon class="fa-icon" icon="fa-solid fa-arrow-down-long" />
         </h2>
       </a>

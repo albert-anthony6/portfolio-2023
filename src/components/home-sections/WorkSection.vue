@@ -100,7 +100,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .work {
-    margin-top: 50px;
+    padding-top: 120px;
 
     h2 {
         font-weight: 300;

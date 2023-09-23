@@ -41,5 +41,13 @@ function toggleModal(payload: string) {
       width: 80%;
     }
   }
+
+  #skills {
+    width: 80%;
+
+    @include bp-lg-laptop {
+      width: 90%;
+    }
+  }
 }
 </style>

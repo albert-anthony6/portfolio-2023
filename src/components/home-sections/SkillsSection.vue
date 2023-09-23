@@ -52,8 +52,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .skills {
-    width: 80%;
-    margin: 0 auto;
     padding-top: 120px;
 
     h2 {
