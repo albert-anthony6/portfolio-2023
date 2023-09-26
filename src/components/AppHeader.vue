@@ -24,7 +24,7 @@ watch(
 </script>
 
 <template>
-    <div :class="isMenuOpen ? 'mobile-menu' : 'app-header'">
+    <header :class="isMenuOpen ? 'mobile-menu' : 'app-header'">
         <div class="header-content">
             <font-awesome-icon class="fa-icon" icon="fa-solid fa-code" />
             <ul>
@@ -39,7 +39,7 @@ watch(
                 <span></span>
             </div>
         </div>
-    </div>
+    </header>
 </template>
 
 <style lang="scss" scoped>

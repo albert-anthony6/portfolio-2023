@@ -14,7 +14,9 @@ onMounted(() => {
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
         <h3 class="mobile-category">Skills</h3>
         <div class="skills-container">
-            <h3 class="desktop-category">Skills</h3>
+            <div class="desktop-category">
+                <h3 class="desktop-category">Skills</h3>
+            </div>
             <div class="list">
                 <div class="tag">Semantic HTML5</div>
                 <div class="tag">Responsive CSS3</div>
@@ -33,7 +35,9 @@ onMounted(() => {
         </div>
         <h3 class="mobile-category">Tools</h3>
         <div class="tools-container">
-            <h3 class="desktop-category">Tools</h3>
+            <div class="desktop-category">
+                <h3 class="desktop-category">Tools</h3>
+            </div>
             <div class="list">
                 <div class="tag">Github</div>
                 <div class="tag">Bitbucket</div>
@@ -60,18 +64,24 @@ onMounted(() => {
 
     .desktop-category {
         display: none;
-        font-size: rem(30);
         width: 50px;
-        padding: 15px;
-        font-weight: 500;
-        background-image: linear-gradient(to right bottom, rgb(209, 40, 231), rgb(63, 3, 78));
-        text-transform: uppercase;
-        line-height: 1;
-        word-break: break-all;
-        -ms-word-break: break-all;
-
+        text-align: center !important;
+        
         @include bp-custom-min(650) {
             display: block;
+        }
+
+        h3 {
+            display: flex;
+            padding: 15px;
+            font-size: rem(30);
+            font-weight: 500;
+            width: 100%;
+            background-image: linear-gradient(to right bottom, rgb(209, 40, 231), rgb(63, 3, 78));
+            text-transform: uppercase;
+            line-height: 1;
+            word-break: break-all;
+            -ms-word-break: break-all;  
         }
     }
 

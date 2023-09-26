@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
+import { ref, onMounted, watch } from 'vue';
+import { useMq } from "vue3-mq";
+import { Carousel, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css'
 import IconAudiLogo from '@/assets/icons/icon_audi_logo.svg';
 import IconCadillacLogo from '@/assets/icons/icon_cadillac_logo.svg';
@@ -9,6 +10,8 @@ import IconBMWLogo from '@/assets/icons/icon_bmw_logo.svg';
 import IconPorscheLogo from '@/assets/icons/icon_porsche_logo.svg';
 import IconUSPSLogo from '@/assets/icons/icon_usps_logo.svg';
 import projects from '@/utils/work-projects';
+
+const mq = useMq();
 
 const emit = defineEmits(['toggle-modal'])
 
@@ -31,10 +34,20 @@ const showCarousel = ref(false);
 onMounted(() => {
     work.value.style.minHeight = window.innerHeight + 'px';
 })
+
+// Only show carousel on mobile
+watch(
+    () => [mq.mdMinus],
+    () => {
+        if (mq.mdMinus && !showCarousel.value) {
+            showCarousel.value = true;
+        }
+    },
+)
 </script>
 
 <template>
-    <div class="work" ref="work">
+    <section class="work" ref="work">
         <h2>Professional Experience</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident similique veritatis modi reiciendis est laudantium corrupti ut necessitatibus tempora praesentium esse, natus nisi atque, blanditiis impedit quam exercitationem commodi. Natus.
@@ -63,7 +76,7 @@ onMounted(() => {
                 <span class="slider-circle"></span>
             </label>
         </div>
-        <div v-if="showCarousel" class="carousels">
+        <div v-if="showCarousel || mq.mdMinus" class="carousels">
             <Carousel id="gallery" :items-to-show="1" :autoplay="5000" :wrap-around="true" v-model="currentSlide">
                 <Slide v-for="slide in projects.length" :key="slide">
                     <!-- <div class="carousel__item">{{ slide }}</div> -->
@@ -95,7 +108,7 @@ onMounted(() => {
                 <img :src="getImageUrl(project.name)" />
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
@@ -153,15 +166,6 @@ onMounted(() => {
     }
 
     .professional-projects {
-        /* display: none; */
-/*         
-        @include bp-lg-laptop {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: stretch;
-            margin-top: 30px;
-        } */
-
         display: flex;
         flex-wrap: wrap;
         align-items: stretch;
@@ -237,10 +241,6 @@ onMounted(() => {
     }
 
     .carousels {
-        /* @include bp-lg-laptop {
-            display: none;
-        } */
-
         #gallery {
             width: 60%;
             margin: 0 auto;
@@ -271,6 +271,7 @@ onMounted(() => {
 
     // Project View Toggle Switch Styling
     .slider {
+        display: none;
         border: none;
         position: relative;
         -webkit-user-select: none;
@@ -279,6 +280,10 @@ onMounted(() => {
         user-select: none;
         width: 125px;
         margin: 30px auto 15px;
+
+        @include bp-lg-laptop {
+            display: block;
+        }
 
         &-checkbox {
             display: none;
