@@ -16,7 +16,9 @@ onMounted(() => {
         <div class="showcase">
             <div class="card vueflicks-card">
                 <div class="card__side card__side--front">
-                    <img class="gif" src="@/assets/images/vueflicks_gif.gif" alt="Preview of the Vueflicks project."  width="250" />
+                    <video loop autoPlay muted playsInline>
+                        <source src="@/assets/videos/vueflicks_video.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="card__side card__side--back">
                     <img class="vue-logo" src="@/assets/images/vue_logo.png" alt="Vue Logo.">
@@ -33,7 +35,7 @@ onMounted(() => {
                         <li class="tag">TMDB API</li>
                     </ul>
                     <div class="view-work">
-                        <a href="#" target="_blank" class="view-code">
+                        <a href="https://github.com/albert-anthony6/Vue-Movie-2023" target="_blank" class="view-code">
                             <font-awesome-icon class="fa-icon" icon="fa-solid fa-code" />
                             View Code
                         </a>
@@ -46,7 +48,9 @@ onMounted(() => {
             </div>
             <div class="card zoo-card">
                 <div class="card__side card__side--front">
-                    <img class="gif" src="@/assets/images/zoo_gif.gif" alt="Preview of the React Adventures project."  width="250" />
+                    <video loop autoPlay muted playsInline>
+                        <source src="@/assets/videos/zoo_video.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="card__side card__side--back">
                     <IconReactLogo class="react-logo" />
@@ -60,7 +64,7 @@ onMounted(() => {
                         <li class="tag">Typescript</li>
                     </ul>
                     <div class="view-work">
-                        <a href="#" target="blank" class="view-code">
+                        <a href="https://github.com/albert-anthony6/react-animals" target="blank" class="view-code">
                             <font-awesome-icon class="fa-icon" icon="fa-solid fa-code" />
                             View Code
                         </a>
@@ -196,6 +200,11 @@ onMounted(() => {
                     background-size: cover;
                     background-position: top;
                     background-repeat: no-repeat;
+
+                    video {
+                        width: 100%;
+                        height: 100%;
+                    }
 
                     img {
                         width: 100%;
