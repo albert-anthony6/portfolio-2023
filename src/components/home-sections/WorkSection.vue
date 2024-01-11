@@ -79,7 +79,6 @@ watch(
         <div v-if="showCarousel || mq.mdMinus" class="carousels">
             <Carousel id="gallery" :items-to-show="1" :autoplay="5000" :wrap-around="true" v-model="currentSlide">
                 <Slide v-for="slide in projects.length" :key="slide">
-                    <!-- <div class="carousel__item">{{ slide }}</div> -->
                     <img :src="getImageUrl(projects[slide - 1].name)" class="main-carousel__item" />
                 </Slide>
             </Carousel>
@@ -93,7 +92,6 @@ watch(
                 ref="carousel"
             >
                 <Slide v-for="slide in projects.length" :key="slide">
-                    <!-- <div class="carousel__item" @click="slideTo(slide - 1)">{{ slide }}</div> -->
                     <img :src="getImageUrl(projects[slide - 1].name)" class="sub-carousel__item" @click="slideTo(slide - 1)" />
                 </Slide>
             </Carousel>
@@ -118,11 +116,24 @@ watch(
     h2 {
         font-weight: 300;
         margin-bottom: 20px;
+        padding: 0 25px;
     }
 
     p {
-        width: 45%;
+        width: 80%;
         margin: 0 auto;
+
+        &:nth-child(4) {
+            margin-bottom: 30px;
+
+            @include bp-lg-laptop {
+                margin-bottom: 0;
+            }
+        }
+
+        @include bp-lg-laptop {
+            width: 45%;
+        }
     }
 
     svg {
@@ -137,28 +148,55 @@ watch(
         padding: 30px 30px 20px;
 
         &-title {
-            font-size: rem(25);
+            width: 100%;
+            font-size: rem(30);
+            margin: 0 auto;
             text-transform: uppercase;
+            
+            @include bp-custom-min(425) {
+                font-size: rem(28);
+            }
+            
+            @include bp-sm-phone-landscape {
+                width: 80%;
+                font-size: rem(25);
+                width: auto;
+                margin: unset;
+            }
         }
 
         ul {
             display: flex;
-            width: 60%;
+            width: 100%;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             margin: 0 auto;
+            
+            @include bp-custom-min(810) {
+                width: 730px;
+            }
+            
+            @include bp-xl-desktop {
+                width: 1000px;
+            }
 
             li {
-                font-size: rem(25);
-                margin-left: 30px;
+                font-size: rem(22.5);
+                margin: 0 15px;
+                
+                @include bp-custom-min(350) {
+                    font-size: rem(25);
+                }
 
                 &:first-child {
-                    margin-left: 0;
-
                     svg {
-                        width: 3.2em;
+                        width: 3.5em;
                         margin-top: -3px;
+
+                        @include bp-custom-min(350) {
+                            width: 3.2em;
+                        }
                     }
                 }
             }
@@ -242,14 +280,26 @@ watch(
 
     .carousels {
         #gallery {
-            width: 60%;
-            margin: 0 auto;
+            width: 100%;
+            
+            @include bp-md-tablet {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            img {
+                width: 100%;
+                max-height: 55vw;
+
+                @include bp-md-tablet {
+                    max-height: 40vw;
+                }
+            }
         }
     
         .main-carousel__item,
         .sub-carousel__item {
             width: 100%;
-            max-height: 30vw;
         }
     
         .sub-carousel__item {
@@ -259,8 +309,9 @@ watch(
 
         .project-title {
             font-size: rem(40);
-            margin-top: 15px;
+            margin: 15px 0 10px;
             font-weight: 300;
+            line-height: 1.2;
         }
         
         p {

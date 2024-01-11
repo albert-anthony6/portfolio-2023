@@ -64,7 +64,7 @@ const projects: Project[] = [
     {
         name: 'kpi_dashboard.jpg',
         title: 'KPI Dashboard',
-        description: 'Built and maintaned a KPI dashboard for tracking user data. This was for Audi and Volkswagen!'
+        description: 'Built and maintained a KPI dashboard for tracking user data. This was for Audi and Volkswagen!'
     },
     {
         name: 'lxp_base_classrooms.jpg',
@@ -104,7 +104,7 @@ const projects: Project[] = [
     {
         name: 'usps_ces_kiosks.jpg',
         title: 'USPS Virtual Booth CES 2022',
-        description: 'The app was displayed on different displays. Users could use kiosks to interact with the app!'
+        description: 'The app was put on different displays. Users could use kiosks to interact with the app!'
     },
     {
         name: 'volkswagen_model.jpg',

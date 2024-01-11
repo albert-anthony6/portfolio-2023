@@ -20,7 +20,6 @@ defineProps<Props>();
 .modal {
     position: fixed;
     width: 100vw;
-    height: 100vh;
     height: 100svh;
     top: 50%;
     left: 50%;

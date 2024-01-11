@@ -69,6 +69,7 @@ onMounted(() => {
     h2 {
       font-weight: 300;
       margin-bottom: 25px;
+      padding: 0 25px;
     }
   
     .cards-container {

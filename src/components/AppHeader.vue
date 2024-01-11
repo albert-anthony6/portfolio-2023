@@ -148,7 +148,7 @@ watch(
                 transition: background-color 0.2s ease;
 
                 &:hover {
-                    background-color: red;
+                    background-color: #fc0505;
                 }
             }
         }
@@ -204,7 +204,7 @@ watch(
         background-color: transparent;
 
         &::before {
-            background-color: red;
+            background-color: #fc0505;
             margin-top: 0;
             -webkit-transform: rotate(45deg);
             -moz-transform: rotate(45deg);
@@ -213,7 +213,7 @@ watch(
         }
 
         &::after {
-            background-color: red;
+            background-color: #fc0505;
             transform: rotate(-45deg);
             margin-top: 0;
         }

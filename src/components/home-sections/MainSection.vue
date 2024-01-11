@@ -216,7 +216,7 @@ onMounted(() => {
         }
 
         .red {
-          background-color: red;
+          background-color: #fc0505;
           animation: 1s ease-in-out 0s 1 forwards test;
         }
 

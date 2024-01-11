@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="more-about-me">
-            <h2>Thank You Very Much for Visiting My Portfolio</h2>
+            <h2>Thank You for Visiting My Portfolio!</h2>
             <div class="footer-section">
                 <p>I have high hopes that I've displayed enough information about myself that interest you enough to reach out. It'd be great to see if I'd be a good fit in your work environment. A little more about me is that I really enjoy spending my time learning, especially when it comes to game development. I study web developement every day while at work, and I spend a lot of my free time on hobbies like 3D sculpting, animating, and game development. I primarily use Blender to create my game assets before importing them over to the Unity game engine where I program in C#.</p>
                 <img src="@/assets/images/crimson_ronin.jpg" />
@@ -85,7 +85,6 @@
             font-weight: 300;
             margin-bottom: 50px;
             padding: 0 30px;
-            line-height: 1.2;
         }
 
         .footer-section {

@@ -83,3 +83,36 @@
         transform: translateX(0%);
     }
 }
+
+@keyframes smoothBounce {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+
+@keyframes smoothBounceSmall {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

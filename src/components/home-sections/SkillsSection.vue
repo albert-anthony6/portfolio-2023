@@ -17,39 +17,39 @@ onMounted(() => {
             <div class="desktop-category">
                 <h3 class="desktop-category">Skills</h3>
             </div>
-            <div class="list">
-                <div class="tag">Semantic HTML5</div>
-                <div class="tag">Responsive CSS3</div>
-                <div class="tag">JavaScript</div>
-                <div class="tag">Typescript</div>
-                <div class="tag">JSX</div>
-                <div class="tag">Sass</div>
-                <div class="tag">git</div>
-                <div class="tag">Vue</div>
-                <div class="tag">React</div>
-                <div class="tag">State Management</div>
-                <div class="tag">Debugging</div>
-                <div class="tag">Validation</div>
-                <div class="tag">APIs</div>
-            </div>
+            <ul class="list">
+                <li class="tag">Semantic HTML5</li>
+                <li class="tag">Responsive CSS3</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">Typescript</li>
+                <li class="tag">JSX</li>
+                <li class="tag">Sass</li>
+                <li class="tag">git</li>
+                <li class="tag">Vue</li>
+                <li class="tag">React</li>
+                <li class="tag">State Management</li>
+                <li class="tag">Debugging</li>
+                <li class="tag">Validation</li>
+                <li class="tag">APIs</li>
+            </ul>
         </div>
         <h3 class="mobile-category">Tools</h3>
         <div class="tools-container">
             <div class="desktop-category">
                 <h3 class="desktop-category">Tools</h3>
             </div>
-            <div class="list">
-                <div class="tag">Github</div>
-                <div class="tag">Bitbucket</div>
-                <div class="tag">Slack</div>
-                <div class="tag">Jira</div>
-                <div class="tag">Adobe XD</div>
-                <div class="tag">Communication</div>
-                <div class="tag">Google</div>
-                <div class="tag">Stack Overflow</div>
-                <div class="tag">Documentation</div>
-                <div class="tag">Monday</div>
-            </div>
+            <ul class="list">
+                <li class="tag">Github</li>
+                <li class="tag">Bitbucket</li>
+                <li class="tag">Slack</li>
+                <li class="tag">Jira</li>
+                <li class="tag">Adobe XD</li>
+                <li class="tag">Communication</li>
+                <li class="tag">Google</li>
+                <li class="tag">Stack Overflow</li>
+                <li class="tag">Documentation</li>
+                <li class="tag">Monday</li>
+            </ul>
         </div>
     </section>
 </template>
@@ -107,7 +107,6 @@ onMounted(() => {
         padding: 5px 15px;
         border: 1px solid $lightest-neutral;
         border-radius: 50px;
-        margin-top: 20px;
         margin: 20px 5px 0;
         transition: all 0.2s ease;
 
