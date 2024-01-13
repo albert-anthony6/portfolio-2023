@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { Carousel, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
+
+const carousel = ref()
 
 const slides = [
     'orc.jpg',
@@ -27,6 +30,18 @@ const breakpoints = {
         snapAlign: 'center',
     },
 };
+
+const modules: any = import.meta.glob('/src/assets/images/*.jpg', { eager: true });
+
+const getImageUrl = (name: string) => {
+    const path = `/src/assets/images/${name}`;
+    return modules[path].default;
+}
+
+function handleTransition(slide: number) {
+    if (slide  === carousel.value.data.currentSlide.value) return;
+    carousel.value?.slideTo(slide );
+}
 </script>
 
 <template>
@@ -34,13 +49,13 @@ const breakpoints = {
         <div class="footer-links">
             <h3>Let's Connect!</h3>
             <div class="icons">
-                <a href="https://google.com" class="social-icon" target="_blank">
+                <a href="mailto:valdesalbert21@gmail.com" class="social-icon">
                     <font-awesome-icon class="fa-icon" icon="fa-solid fa-envelope" />
                 </a>
-                <a href="https://google.com" class="social-icon" target="_blank">
+                <a href="https://github.com/albert-anthony6" class="social-icon" target="_blank">
                     <font-awesome-icon class="fa-icon" icon="fa-brands fa-github" />
                 </a>
-                <a href="https://google.com" class="social-icon" target="_blank">
+                <a href="https://www.linkedin.com/in/avaldes21/" class="social-icon" target="_blank">
                     <font-awesome-icon class="fa-icon" icon="fa-brands fa-linkedin-in" />
                 </a>
             </div>
@@ -51,9 +66,9 @@ const breakpoints = {
                 <p>I hope that I have displayed enough information about myself that interests you enough to reach out. It'd be great to see if I'd be a good fit at your work environment!</p>
                 <p>In case you'd like to know a little more about me, I really enjoy spending my time learning, especially when it comes to game development and 3D art. I study web developement every day while at work, and I spend a lot of my free time on hobbies like 3D sculpting, animating, and game development. I primarily use Blender to create my game assets before importing them over to the Unity game engine where I program in C#.</p>
                 <p>Web & Game development have been my main interests for a while now. If you're interested, I'd be glad to share more and learn more about each other. Thank you!</p>
-                <Carousel :itemsToShow="3.95" :breakpoints="breakpoints" :wrapAround="true" :transition="500">
-                    <Slide v-for="slide in slides" :key="slide">
-                        <img class="carousel__item" :src="`src/assets/images/${slide}`" />
+                <Carousel :itemsToShow="3.95" :breakpoints="breakpoints" :wrapAround="true" :transition="500" ref="carousel">
+                    <Slide v-for="(slide, idx) in slides" :key="`${idx}-${slide}`" @click="handleTransition(idx)">
+                        <img class="carousel__item" :src="getImageUrl(slide)" />
                     </Slide>
                 </Carousel>
             </div>
@@ -122,6 +137,7 @@ const breakpoints = {
         padding: 5px;
         opacity: 0.9;
         transform: rotateY(-20deg) scale(0.9);
+        cursor: pointer;
 
         img {
             width: 100%;

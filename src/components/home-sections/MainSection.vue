@@ -38,13 +38,13 @@ onMounted(() => {
           <div class="green action" />
         </div>
         <div class="icons">
-          <a href="https://google.com" class="social-icon" target="_blank">
+          <a href="mailto:valdesalbert21@gmail.com" class="social-icon">
             <font-awesome-icon class="fa-icon" icon="fa-solid fa-envelope" />
           </a>
-          <a href="https://google.com" class="social-icon" target="_blank">
+          <a href="https://github.com/albert-anthony6" class="social-icon" target="_blank">
             <font-awesome-icon class="fa-icon" icon="fa-brands fa-github" />
           </a>
-          <a href="https://google.com" class="social-icon" target="_blank">
+          <a href="https://www.linkedin.com/in/avaldes21/" class="social-icon" target="_blank">
             <font-awesome-icon class="fa-icon" icon="fa-brands fa-linkedin-in" />
           </a>
         </div>
