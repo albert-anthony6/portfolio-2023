@@ -150,7 +150,7 @@ onMounted(() => {
                 }
 
                 .card__side--front {
-                    background-image: url("/src/assets/images/vueflicks_background.png");
+                    background-image: url("/src/assets/images/vueflicks_background.jpg");
                 }
 
                 .card__side--back {
@@ -176,7 +176,7 @@ onMounted(() => {
                 }
 
                 .card__side--front {
-                    background-image: url("/src/assets/images/zoo_background.png");
+                    background-image: url("/src/assets/images/zoo_background.jpg");
                     background-position: 60% 50%;
                 }
 

@@ -98,7 +98,7 @@ watch(
                 }
 
                 &:hover {
-                    color: #ff70e0;
+                    color: $hover-pink;
                 }
             }
         }

@@ -2,7 +2,7 @@
 import { ref, onMounted, watch } from 'vue';
 import { useMq } from "vue3-mq";
 import { Carousel, Slide } from 'vue3-carousel';
-import 'vue3-carousel/dist/carousel.css'
+import 'vue3-carousel/dist/carousel.css';
 import IconAudiLogo from '@/assets/icons/icon_audi_logo.svg';
 import IconCadillacLogo from '@/assets/icons/icon_cadillac_logo.svg';
 import IconVolkswagenLogo from '@/assets/icons/icon_volkswagen_logo.svg';

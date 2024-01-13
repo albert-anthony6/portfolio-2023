@@ -1,4 +1,33 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Carousel, Slide } from 'vue3-carousel';
+import 'vue3-carousel/dist/carousel.css';
+
+const slides = [
+    'orc.jpg',
+    'orc_head.jpg',
+    'crimson_ronin.jpg',
+    'crimson_ronin_v2.jpg',
+    'mid_poly_model.jpg',
+    'fish_model.jpg',
+    '4legs.jpg',
+    'skeleton.jpg',
+    'unity.jpg',
+    'male.jpg',
+];
+
+const breakpoints = {
+    // 0px and up
+    0: {
+        itemsToShow: 3,
+        snapAlign: 'center',
+    },
+    // 850px and up
+    850: {
+        itemsToShow: 3.95,
+        snapAlign: 'center',
+    },
+};
+</script>
 
 <template>
     <footer class="footer">
@@ -18,29 +47,15 @@
         </div>
         <div class="more-about-me">
             <h2>Thank You for Visiting My Portfolio!</h2>
-            <div class="footer-section">
-                <p>I have high hopes that I've displayed enough information about myself that interest you enough to reach out. It'd be great to see if I'd be a good fit in your work environment. A little more about me is that I really enjoy spending my time learning, especially when it comes to game development. I study web developement every day while at work, and I spend a lot of my free time on hobbies like 3D sculpting, animating, and game development. I primarily use Blender to create my game assets before importing them over to the Unity game engine where I program in C#.</p>
-                <img src="@/assets/images/crimson_ronin.jpg" />
-            </div>
-            <div class="footer-section">
-                <div class="blender-model">
-                    <img src="@/assets/images/mid_poly_model.jpg" />
-                </div>
-                <ol>
-                    <p>My current process is as follows:</p>
-                    <li>Sculpt something</li>
-                    <li>Retopologize the sculpt for optimal performance</li>
-                    <li>Rig the retopologized model</li>
-                    <li>Weight paint the model</li>
-                    <li>Paint the model!</li>
-                    <li>Animate it to give it some life!</li>
-                    <li>Import the model into Unity</li>
-                    <li>Start programming!</li>
-                </ol>
-            </div>
-            <div class="footer-section">
-                <p>Web & Game development have been my main interests for a while now. If you're interested, I'd be glad to share and learn more about each other. Thank you!</p>
-                <img src="@/assets/images/fish_model.jpg" />
+            <div class="footer-carousel">
+                <p>I hope that I have displayed enough information about myself that interests you enough to reach out. It'd be great to see if I'd be a good fit at your work environment!</p>
+                <p>In case you'd like to know a little more about me, I really enjoy spending my time learning, especially when it comes to game development and 3D art. I study web developement every day while at work, and I spend a lot of my free time on hobbies like 3D sculpting, animating, and game development. I primarily use Blender to create my game assets before importing them over to the Unity game engine where I program in C#.</p>
+                <p>Web & Game development have been my main interests for a while now. If you're interested, I'd be glad to share more and learn more about each other. Thank you!</p>
+                <Carousel :itemsToShow="3.95" :breakpoints="breakpoints" :wrapAround="true" :transition="500">
+                    <Slide v-for="slide in slides" :key="slide">
+                        <img class="carousel__item" :src="`src/assets/images/${slide}`" />
+                    </Slide>
+                </Carousel>
             </div>
         </div>
     </footer>
@@ -71,7 +86,7 @@
                 transition: all 0.2s ease;
 
                 &:hover {
-                    color: #ff70e0;
+                    color: $hover-pink;
                 }
             }
         }
@@ -87,94 +102,64 @@
             padding: 0 30px;
         }
 
-        .footer-section {
-            width: 80%;
-            margin: 15px auto;
-            max-width: 1400px;
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-            text-align: left;
-            
-            @include bp-lg-laptop {
-                flex-direction: row;
-                justify-content: space-between;
-                width: 90%;
-            }
-
-            @include bp-xl-desktop {
-                margin: 0 auto;
-            }
-
-            &:nth-child(3) {
-                flex-direction: column;
-
-                @include bp-lg-laptop {
-                    flex-direction: row;
-                }
-            }
-
-            ol {
-                margin-left: 20px;
-
-                @include bp-sm-phone-landscape {
-                    margin-left: 0;
-                }
-
-                p {
-                    width: 100%;
-                    font-size: rem(18);
-                    margin-left: -15px;
-                    line-height: 1.3;
-                    margin-bottom: 5px;
-                    
-                    @include bp-sm-phone-landscape {
-                        font-size: rem(20);
-                        margin-bottom: 0;
-                    }
-                }
-            }
-
+        .footer-carousel {
             p {
-                width: 100%;
-                font-size: rem(16);
-                margin-top: 20px;
-                
-                @include bp-sm-phone-landscape {
-                    font-size: rem(18);
-                }
-
-                @include bp-lg-laptop {
-                    width: 50%;
-                    margin-top: unset;
-                }
-                
-                @include bp-xl-desktop {
-                    width: 40%;
-                }
-            }
-
-            img,
-            .blender-model {
-                width:  100%;
-
-                @include bp-lg-laptop {
-                    width: 40%;
-                }
-            }
-
-            img:nth-child(1) {
-                display: block;
-                width: 60%;
-                max-width: 300px;
+                width: 80%;
                 margin: 0 auto;
 
-                @include bp-lg-laptop {
-                    width: 50%;
-                    margin: unset;
+                &:not(:first-of-type) {
+                    margin-top: 25px;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 25px;
                 }
             }
         }
+    }
+
+    .carousel__slide {
+        padding: 5px;
+        opacity: 0.9;
+        transform: rotateY(-20deg) scale(0.9);
+
+        img {
+            width: 100%;
+            max-height: 600px;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        &--sliding {
+            transition: 0.5s;
+        }
+
+        &--prev {
+            opacity: 1;
+            transform: rotateY(-10deg) scale(0.95);
+        }
+
+        &--next {
+            opacity: 1;
+            transform: rotateY(10deg) scale(0.95);
+        }
+
+        &--active {
+            opacity: 1;
+            transform: rotateY(0) scale(1.1);
+        }
+    }
+
+    .carousel__viewport {
+        perspective: 2000px;
+    }
+
+    .carousel__track {
+        transform-style: preserve-3d;
+    }
+
+    .carousel__slide--active ~ .carousel__slide {
+        transform: rotateY(20deg) scale(0.9);
     }
 }
 </style>
