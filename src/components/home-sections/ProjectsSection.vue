@@ -55,7 +55,7 @@ onMounted(() => {
                 <div class="card__side card__side--back">
                     <IconReactLogo class="react-logo" />
                     <h2>React Adventures</h2>
-                    <p>This zoo project made with React.js+Vite is a clone of the Memphis Zoo website, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
+                    <p>This zoo project made with React.js+Vite is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a>, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
                     <h3>Tools Used</h3>
                     <ul class="list">
                         <li class="tag">React v18</li>
@@ -221,6 +221,15 @@ onMounted(() => {
 
                     p {
                         padding: 0 15px;
+
+                        a {
+                            font-weight: bold;
+                            transition: color 0.3s ease;
+    
+                            &:hover {
+                                color: $light-yellow;
+                            }
+                        }
                     }
 
                     h2 {
