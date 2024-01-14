@@ -45,7 +45,7 @@ watch(
                         <source src="@/assets/videos/vueflicks_video.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="card__side card__side--back" :class="{'reverse-flip': isMovieProjectRotated}">
+                <div class="card__side card__side--back" :class="{'unflip': isMovieProjectRotated}">
                     <img class="vue-logo" src="@/assets/images/vue_logo.png" alt="Vue Logo.">
                     <h2>Vueflicks</h2>
                     <p>This movie app made with Vue3+Vite is meant to show that I can work with data coming from an API. The focus was on working with data rather than on the design. It utilizes netlify functions to hide the API key without having my own personal database!</p>
@@ -77,7 +77,7 @@ watch(
                         <source src="@/assets/videos/zoo_video.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="card__side card__side--back" :class="{'reverse-flip': isZooProjectRotated}">
+                <div class="card__side card__side--back" :class="{'unflip': isZooProjectRotated}">
                     <IconReactLogo class="react-logo" />
                     <h2>React Adventures</h2>
                     <p>This zoo project made with React.js+Vite is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a>, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
@@ -350,17 +350,17 @@ watch(
                 transform: rotateY(0);
             }
 
-            .flip {
+            .card__side.card__side--front.flip {
                 transform: rotateY(180deg);
             }
         
-            .reverse-flip {
-                transform: rotateY(0) !important;
+            .card__side.card__side--back.unflip {
+                transform: rotateY(0);
             }
         }
     }
 
-    .card.vueflicks-card.vueflicks-card__flipped {
+    .card.vueflicks-card.vueflicks-card__unflipped {
         margin-bottom: 30px;
 
         @include bp-sm-phone-landscape {
