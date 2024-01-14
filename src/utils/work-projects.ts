@@ -29,12 +29,12 @@ const projects: Project[] = [
     {
         name: 'bmw_vxp_arnold.jpg',
         title: 'BMW VXP',
-        description: 'Arnold Schwarzenegger was a speaker at the BMW event and had the UI right behind him for everone to see!'
+        description: 'Arnold Schwarzenegger was a speaker at the BMW event and had the UI right behind him for everyone to see!'
     },
     {
         name: 'cadillac_lxp.jpg',
         title: 'Cadillac LXP Engagement',
-        description: 'I filled in for another dev and helped debug some issues for this LXP.'
+        description: 'I filled in for another dev and helped debug some issues for this Cadillac LXP.'
     },
     {
         name: 'electrify_america_dashboard.jpg',
@@ -74,7 +74,7 @@ const projects: Project[] = [
     {
         name: 'lxp_cms_classrooms.jpg',
         title: 'Base LXP CMS',
-        description: 'I built the pages for classrooms on the base LXP CMS! Allowed admins to view all, edit, delete, hide, or create classrooms.'
+        description: 'I built the pages for classrooms on the base LXP CMS! Allowed admins to view all, edit, delete, hide, and create classrooms.'
     },
     {
         name: 'lxp_store.jpg',

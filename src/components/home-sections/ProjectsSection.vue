@@ -214,7 +214,7 @@ watch(
                 border-radius: 8px;
 
                 &--front {
-                    background-color: #c2c2c2;
+                    background-color: $lightest-grey;
                     height: 100%;
                     background-size: cover;
                     background-position: top;
@@ -235,7 +235,7 @@ watch(
                 
                 &--back {
                     padding: 15px 0;
-                    background-color: #c2c2c2;
+                    background-color: $lightest-grey;
                     transform: rotateY(180deg);
 
                     p {

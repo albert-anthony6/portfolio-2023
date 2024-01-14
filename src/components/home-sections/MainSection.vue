@@ -145,7 +145,7 @@ onMounted(() => {
     .first-words {
       font-size: rem(14);
       position: relative;
-      background-color: #EDF0F1;
+      background-color: $light-neutral;
       border-radius: 3px;
       width: 80%;
 
@@ -216,17 +216,17 @@ onMounted(() => {
         }
 
         .red {
-          background-color: #fc0505;
+          background-color: $red;
           animation: 1s ease-in-out 0s 1 forwards test;
         }
 
         .yellow {
-          background-color: yellow;
+          background-color: $light-yellow;
           animation: 2s ease-in-out 0s 1 forwards test;
         }
 
         .green {
-          background-color: green;
+          background-color: $green;
           animation: 3s ease-in-out 0s 1 forwards test;
         }
       }
@@ -234,7 +234,7 @@ onMounted(() => {
       .icons {
         padding: 30px 15px 0;
         border-bottom: 2px solid $lightest-neutral;
-        background-color: #596F7D;
+        background-color: $icons-bg;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
 

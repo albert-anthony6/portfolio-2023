@@ -148,7 +148,7 @@ watch(
                 transition: background-color 0.2s ease;
 
                 &:hover {
-                    background-color: #fc0505;
+                    background-color: $red;
                 }
             }
         }
@@ -173,7 +173,7 @@ watch(
     & span,
     & span::before,
     & span::after {
-        background-color: #f534cb; 
+        background-color: $pink; 
         content: '';
         position: absolute;
         width: 40px;
@@ -204,7 +204,7 @@ watch(
         background-color: transparent;
 
         &::before {
-            background-color: #fc0505;
+            background-color: $red;
             margin-top: 0;
             -webkit-transform: rotate(45deg);
             -moz-transform: rotate(45deg);
@@ -213,7 +213,7 @@ watch(
         }
 
         &::after {
-            background-color: #fc0505;
+            background-color: $red;
             transform: rotate(-45deg);
             margin-top: 0;
         }

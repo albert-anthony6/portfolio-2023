@@ -42,8 +42,12 @@ onMounted(() => {
     position: relative;
     padding: 200px 0 150px 0;
     margin-top: 120px;
-    background: url('@/assets/images/why_me_bg.jpg') no-repeat fixed center/cover;
+    background-color: $purple;
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+
+    @include bp-custom-min(850) {
+      background: url('@/assets/images/why_me_bg.jpg') no-repeat fixed center/cover;
+    }
     
     @include bp-sm-phone-landscape {
       padding: 250px 0 250px 0;

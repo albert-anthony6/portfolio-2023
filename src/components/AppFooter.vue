@@ -78,7 +78,7 @@ function handleTransition(slide: number) {
 
 <style lang="scss" scoped>
 .footer {
-    background-color: #3A3A3A;
+    background-color: $grey;
     padding-bottom: 30px;
 
     &-links {
