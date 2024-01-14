@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useMq } from "vue3-mq";
 import IconReactLogo from '@/assets/icons/icon_react_logo.svg';
 
@@ -15,10 +15,23 @@ function handleCardFlip(name: string) {
     // Use these to change classes when on mobile (enables tap to flip cards)
     if (name === 'movie-card') {
         isMovieProjectRotated.value = !isMovieProjectRotated.value;
+        isZooProjectRotated.value = false;
     } else {
         isZooProjectRotated.value = !isZooProjectRotated.value;
+        isMovieProjectRotated.value = false;
     }
 }
+
+// Remvoe mobile classes if screen width is too large
+watch(
+    () => [mq.tabPlus],
+    () => {
+        if (mq.tabPlus && isMovieProjectRotated.value || mq.tabPlus && isZooProjectRotated.value) {
+            isZooProjectRotated.value = false;
+            isMovieProjectRotated.value = false;
+        }
+    },
+)
 </script>
 
 <template>
@@ -27,12 +40,12 @@ function handleCardFlip(name: string) {
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
         <div class="showcase">
             <div class="card vueflicks-card" @click="handleCardFlip('movie-card')">
-                <div class="card__side card__side--front" :class="{flip: isMovieProjectRotated && !mq.tabPlus}">
+                <div class="card__side card__side--front" :class="{flip: isMovieProjectRotated}">
                     <video loop autoPlay muted playsInline>
                         <source src="@/assets/videos/vueflicks_video.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="card__side card__side--back" :class="{'reverse-flip': isMovieProjectRotated && !mq.tabPlus}">
+                <div class="card__side card__side--back" :class="{'reverse-flip': isMovieProjectRotated}">
                     <img class="vue-logo" src="@/assets/images/vue_logo.png" alt="Vue Logo.">
                     <h2>Vueflicks</h2>
                     <p>This movie app made with Vue3+Vite is meant to show that I can work with data coming from an API. The focus was on working with data rather than on the design. It utilizes netlify functions to hide the API key without having my own personal database!</p>
@@ -59,12 +72,12 @@ function handleCardFlip(name: string) {
                 </div>
             </div>
             <div class="card zoo-card" @click="handleCardFlip('zoo-card')">
-                <div class="card__side card__side--front" :class="{flip: isZooProjectRotated && !mq.tabPlus}">
+                <div class="card__side card__side--front" :class="{flip: isZooProjectRotated}">
                     <video loop autoPlay muted playsInline>
                         <source src="@/assets/videos/zoo_video.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="card__side card__side--back" :class="{'reverse-flip': isZooProjectRotated && !mq.tabPlus}">
+                <div class="card__side card__side--back" :class="{'reverse-flip': isZooProjectRotated}">
                     <IconReactLogo class="react-logo" />
                     <h2>React Adventures</h2>
                     <p>This zoo project made with React.js+Vite is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a>, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
