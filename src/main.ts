@@ -18,6 +18,7 @@ app.use(Vue3Mq, {
         xs: 375,
         sm: 576,
         md: 768,
+        tab: 851,
         lg: 992,
         xl: 1200,
         xxl: 1600,
