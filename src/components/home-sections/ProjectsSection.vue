@@ -40,12 +40,12 @@ watch(
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
         <div class="showcase">
             <div class="card vueflicks-card" :class="isMovieProjectRotated ? 'vueflicks-card__flipped' : 'vueflicks-card__unflipped'" @click="handleCardFlip('movie-card')">
-                <div class="card__side card__side--front" :class="{flip: isMovieProjectRotated}">
+                <div class="card__side card__side--front" :class="isMovieProjectRotated ? 'flip__mobile' : 'flip__desktop'">
                     <video loop autoPlay muted playsInline>
                         <source src="@/assets/videos/vueflicks_video.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="card__side card__side--back" :class="{'unflip': isMovieProjectRotated}">
+                <div class="card__side card__side--back" :class="isMovieProjectRotated ? 'unflip__mobile' : 'unflip__desktop'">
                     <img class="vue-logo" src="@/assets/images/vue_logo.png" alt="Vue Logo.">
                     <h2>Vueflicks</h2>
                     <p>This movie app made with Vue3+Vite is meant to show that I can work with data coming from an API. The focus was on working with data rather than on the design. It utilizes netlify functions to hide the API key without having my own personal database!</p>
@@ -72,12 +72,12 @@ watch(
                 </div>
             </div>
             <div class="card zoo-card" :class="{'zoo-card__flipped': isZooProjectRotated}" @click="handleCardFlip('zoo-card')">
-                <div class="card__side card__side--front" :class="{flip: isZooProjectRotated}">
+                <div class="card__side card__side--front" :class="isZooProjectRotated ? 'flip__mobile' : 'flip__desktop'">
                     <video loop autoPlay muted playsInline>
                         <source src="@/assets/videos/zoo_video.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="card__side card__side--back" :class="{'unflip': isZooProjectRotated}">
+                <div class="card__side card__side--back" :class="isZooProjectRotated ? 'unflip__mobile' : 'unflip__desktop'">
                     <IconReactLogo class="react-logo" />
                     <h2>React Adventures</h2>
                     <p>This zoo project made with React.js+Vite is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a>, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
@@ -342,19 +342,19 @@ watch(
                 }
             }
 
-            &:hover .card__side--front {
+            &:hover .flip__desktop {
                 transform: rotateY(180deg);
             }
             
-            &:hover .card__side--back {
+            &:hover .unflip__desktop {
                 transform: rotateY(0);
             }
 
-            .card__side.card__side--front.flip {
+            .flip__mobile {
                 transform: rotateY(180deg);
             }
         
-            .card__side.card__side--back.unflip {
+            .unflip__mobile {
                 transform: rotateY(0);
             }
         }
