@@ -39,7 +39,7 @@ watch(
         <h2>Portfolio Showcase</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
         <div class="showcase">
-            <div class="card vueflicks-card" :class="{'vueflicks-card__flipped': isMovieProjectRotated}" @click="handleCardFlip('movie-card')">
+            <div class="card vueflicks-card" :class="isMovieProjectRotated ? 'vueflicks-card__flipped' : 'vueflicks-card__unflipped'" @click="handleCardFlip('movie-card')">
                 <div class="card__side card__side--front" :class="{flip: isMovieProjectRotated}">
                     <video loop autoPlay muted playsInline>
                         <source src="@/assets/videos/vueflicks_video.mp4" type="video/mp4">
@@ -148,8 +148,6 @@ watch(
             }
 
             &:first-child {
-                margin-bottom: 30px;
-
                 &:hover {
                     margin-bottom: 280px;
 
@@ -160,10 +158,6 @@ watch(
                     @include bp-sm-phone-landscape {
                         margin-bottom: 80px;
                     }
-                }
-                
-                @include bp-sm-phone-landscape {
-                    margin-bottom: 50px;
                 }
                  
                 @include bp-lg-laptop {
@@ -361,8 +355,16 @@ watch(
             }
         
             .reverse-flip {
-                transform: rotateY(0);
+                transform: rotateY(0) !important;
             }
+        }
+    }
+
+    .card.vueflicks-card.vueflicks-card__flipped {
+        margin-bottom: 30px;
+
+        @include bp-sm-phone-landscape {
+            margin-bottom: 50px;
         }
     }
 
