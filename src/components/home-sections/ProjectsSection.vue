@@ -39,7 +39,7 @@ watch(
         <h2>Portfolio Showcase</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
         <div class="showcase">
-            <div class="card vueflicks-card" @click="handleCardFlip('movie-card')">
+            <div class="card vueflicks-card" :class="{'vueflicks-card__flipped': isMovieProjectRotated}" @click="handleCardFlip('movie-card')">
                 <div class="card__side card__side--front" :class="{flip: isMovieProjectRotated}">
                     <video loop autoPlay muted playsInline>
                         <source src="@/assets/videos/vueflicks_video.mp4" type="video/mp4">
@@ -71,7 +71,7 @@ watch(
                     </div>
                 </div>
             </div>
-            <div class="card zoo-card" @click="handleCardFlip('zoo-card')">
+            <div class="card zoo-card" :class="{'zoo-card__flipped': isZooProjectRotated}" @click="handleCardFlip('zoo-card')">
                 <div class="card__side card__side--front" :class="{flip: isZooProjectRotated}">
                     <video loop autoPlay muted playsInline>
                         <source src="@/assets/videos/zoo_video.mp4" type="video/mp4">
@@ -363,6 +363,30 @@ watch(
             .reverse-flip {
                 transform: rotateY(0);
             }
+        }
+    }
+
+    .card.vueflicks-card.vueflicks-card__flipped {
+        margin-bottom: 280px;
+
+        @include bp-xs-phone {
+            margin-bottom: 215px;
+        }
+
+        @include bp-sm-phone-landscape {
+            margin-bottom: 80px;
+        }
+    }
+
+    .card.zoo-card.zoo-card__flipped {
+        margin-bottom: 120px;
+
+        @include bp-xs-phone {
+            margin-bottom: 100px;
+        }
+        
+        @include bp-sm-phone-landscape {
+            margin-bottom: 0;
         }
     }
 }
