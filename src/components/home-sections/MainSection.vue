@@ -6,7 +6,7 @@ const intro = ref();
 
 onMounted(() => {
   intro.value.style.minHeight = window.innerHeight + 'px';
-  const textToType = 'I\'m a developer with over four years of experience working on the Frontend side of web applications. I began my journey in 2019 and have since really enjoyed my commitment to code daily. I strive to refine my skills with each project that I complete! My mindset is always to test new features, communicate with team members, and pay attention to detail. With that being said, I\'d love to share more detail about myself with you!';
+  const textToType = 'I\'m a developer with five years of experience working on the front-end side of web applications. I began my journey in 2019 and have since really enjoyed my commitment to code daily. I strive to refine my skills with each project that I complete! My mindset is always to test new features, communicate with team members, and pay attention to detail. With that being said, I\'d love to share more detail about myself with you!';
   let currentIndex = 0;
 
   function typeCharacter() {

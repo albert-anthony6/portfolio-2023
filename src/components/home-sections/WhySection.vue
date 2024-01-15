@@ -16,7 +16,7 @@ onMounted(() => {
           <font-awesome-icon class="fa-icon" icon="fa-solid fa-hourglass-start" />
           <div class="card-title">Time Managment</div>
           <p>
-            I am able to manage tickets from their severity. I am able to track how much time is spent on minor tickets vs critical tickets which allows me to meet deadlines and have development ready in time for quality assurance.
+            I effectively manage tickets based on their severity, tracking time allocation between minor and major updates. This ensures meeting deadlines and timely development for quality assurance.
           </p>
         </div>
         <div class="card">
@@ -41,7 +41,6 @@ onMounted(() => {
   .why {
     position: relative;
     padding: 200px 0 150px 0;
-    margin-top: 120px;
     background-color: $purple;
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
 

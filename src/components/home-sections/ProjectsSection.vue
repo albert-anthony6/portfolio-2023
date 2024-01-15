@@ -37,7 +37,7 @@ watch(
 <template>
     <section class="projects">
         <h2>Portfolio Showcase</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
+        <p>These latest side projects made, with Vue, React, and Vite, demonstrate API handling and UI construction.</p>
         <div class="showcase">
             <div class="card vueflicks-card" :class="isMovieProjectRotated ? 'vueflicks-card__flipped' : 'vueflicks-card__unflipped'" @click="handleCardFlip('movie-card')">
                 <div class="card__side card__side--front" :class="{flip: isMovieProjectRotated}">
@@ -48,7 +48,7 @@ watch(
                 <div class="card__side card__side--back" :class="{'unflip': isMovieProjectRotated}">
                     <img class="vue-logo" src="@/assets/images/vue_logo.png" alt="Vue Logo.">
                     <h2>Vueflicks</h2>
-                    <p>This movie app made with Vue3+Vite is meant to show that I can work with data coming from an API. The focus was on working with data rather than on the design. It utilizes netlify functions to hide the API key without having my own personal database!</p>
+                    <p>This movie app, made with Vue3+Vite, is meant to show that I can work with data coming from an API. The focus was on working with data rather than on the design. It utilizes netlify functions to hide the API key without having my own personal database!</p>
                     <h3>Tools Used</h3>
                     <ul class="list">
                         <li class="tag">Vue3</li>
@@ -80,7 +80,7 @@ watch(
                 <div class="card__side card__side--back" :class="{'unflip': isZooProjectRotated}">
                     <IconReactLogo class="react-logo" />
                     <h2>React Adventures</h2>
-                    <p>This zoo project made with React.js+Vite is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a>, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
+                    <p>This zoo project, made with React18+Vite, is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a>, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
                     <h3>Tools Used</h3>
                     <ul class="list">
                         <li class="tag">React v18</li>
@@ -365,6 +365,10 @@ watch(
 
         @include bp-sm-phone-landscape {
             margin-bottom: 50px;
+        }
+
+        @include bp-lg-laptop {
+            margin-bottom: 0;
         }
     }
 

@@ -33,7 +33,7 @@ watch(
                 <li><a href="#skills" @click="closeMenu">Skills</a></li>
                 <li><a href="#why-me" @click="closeMenu">About</a></li>
                 <li><a href="#work" @click="closeMenu">Work Experience</a></li>
-                <li><a href="https://google.com" @click="closeMenu">Resume</a></li>
+                <li><a href="/resume.pdf" download @click="closeMenu">Resume</a></li>
             </ul>
             <div class="menu-icon" @click="isMenuOpen = !isMenuOpen" :class="{'menu-active': isMenuOpen}">
                 <span></span>

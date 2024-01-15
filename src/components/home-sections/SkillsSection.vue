@@ -11,7 +11,7 @@ onMounted(() => {
 <template>
     <section class="skills" ref="skills">
         <h2>Skills & Tools</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, incidunt? testRepellat, incidunt? test</p>
+        <p>Below are my current skills that include programming languages and technologies that I've used for years.</p>
         <h3 class="mobile-category">Skills</h3>
         <div class="skills-container">
             <div class="desktop-category">
@@ -22,15 +22,16 @@ onMounted(() => {
                 <li class="tag">Responsive CSS3</li>
                 <li class="tag">JavaScript</li>
                 <li class="tag">Typescript</li>
-                <li class="tag">JSX</li>
                 <li class="tag">Sass</li>
                 <li class="tag">git</li>
                 <li class="tag">Vue</li>
                 <li class="tag">React</li>
                 <li class="tag">State Management</li>
+                <li class="tag">JSX</li>
+                <li class="tag">C#</li>
                 <li class="tag">Debugging</li>
-                <li class="tag">Validation</li>
-                <li class="tag">APIs</li>
+                <li class="tag">Form Validation</li>
+                <li class="tag">API Handling</li>
             </ul>
         </div>
         <h3 class="mobile-category">Tools</h3>
@@ -41,6 +42,7 @@ onMounted(() => {
             <ul class="list">
                 <li class="tag">Github</li>
                 <li class="tag">Bitbucket</li>
+                <li class="tag">VSCode</li>
                 <li class="tag">Slack</li>
                 <li class="tag">Jira</li>
                 <li class="tag">Adobe XD</li>
@@ -49,6 +51,7 @@ onMounted(() => {
                 <li class="tag">Stack Overflow</li>
                 <li class="tag">Documentation</li>
                 <li class="tag">Monday</li>
+                <li class="tag">Toggle</li>
             </ul>
         </div>
     </section>

@@ -50,7 +50,7 @@ watch(
     <section class="work" ref="work">
         <h2>Professional Experience</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident similique veritatis modi reiciendis est laudantium corrupti ut necessitatibus tempora praesentium esse, natus nisi atque, blanditiis impedit quam exercitationem commodi. Natus.
+            Below are just some of the many projects I was assigned to during my time at 24G. I learned a lot from these projects and enjoyed getting the chance to build something from scratch on some of these.
         </p>
         <div class="brands">
             <div class="brands-title">Cool Brands I Got to Work With</div>
@@ -67,7 +67,7 @@ watch(
             </ul>
         </div>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident similique veritatis modi reiciendis est laudantium corrupti ut necessitatibus tempora praesentium esse, natus nisi atque, blanditiis impedit quam exercitationem commodi. Natus.
+            Below, you’ll see the flagship product, LXP (Learning Experience Platform), showcased alongside earlier versions VXP & NXP, and projects I built from scratch. I would clone, reskin, and customize the base product to make LXP spinoffs. We made several spinoff LXPs for clients and customized each one to fit their needs and branding. I updated each of them to the latest base version regularly, and I even got to implement some major features into the base product!
         </p>
         <div class="slider" @click="currentSlide = 0">
             <input v-model="showCarousel" type="checkbox" name="slider" class="slider-checkbox" id="sliderSwitch">
