@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useMq } from "vue3-mq";
 import IconReactLogo from '@/assets/icons/icon_react_logo.svg';
+
+interface Props {
+  sectionHeight: string;
+}
+
+const props = defineProps<Props>();
 
 const mq = useMq();
 
@@ -22,6 +28,21 @@ function handleCardFlip(name: string) {
     }
 }
 
+const projects = ref();
+
+onMounted(() => {
+    // Setting initial section min-height
+    projects.value.style.minHeight = props.sectionHeight;
+})
+
+// Update section min-height is this prop changes
+watch(
+    () => [props.sectionHeight],
+    (val) => {
+        projects.value.style.minHeight = val;
+    },
+)
+
 // Remvoe mobile classes if screen width is too large
 watch(
     () => [mq.tabPlus],
@@ -35,7 +56,7 @@ watch(
 </script>
 
 <template>
-    <section class="projects">
+    <section class="projects" ref="projects">
         <h2>Portfolio Showcase</h2>
         <p>These latest side projects made, with Vue, React, and Vite, demonstrate API handling and UI construction.</p>
         <div class="showcase">

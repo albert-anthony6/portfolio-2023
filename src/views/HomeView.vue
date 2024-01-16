@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import AppModal from '@/components/AppModal.vue';
 import MainSection from '@/components/home-sections/MainSection.vue';
 import ProjectsSection from '@/components/home-sections/ProjectsSection.vue';
@@ -16,15 +16,36 @@ function toggleModal(payload: string) {
   }
   isModalOpen.value = !isModalOpen.value;
 }
+
+const sectionHeight = ref('0');
+
+function adjustHeight() {
+  // Ensure each section fill the height of the page on all devices with a max height of 1100
+  if (window.innerHeight >= 1100) {
+    sectionHeight.value = '1100px';
+  } else {
+    sectionHeight.value = `${window.innerHeight}px`;
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("resize", adjustHeight);
+});
+
+onBeforeUnmount(() => {
+  window.addEventListener("resize", adjustHeight);
+});
+
+adjustHeight();
 </script>
 
 <template>
   <div class="home">
-    <MainSection id="home" />
-    <ProjectsSection  id="projects" />
-    <SkillsSection id="skills" />
-    <WhySection id="why-me" />
-    <WorkSection @toggle-modal="toggleModal($event)" id="work" />
+    <MainSection id="home" :sectionHeight="sectionHeight" />
+    <ProjectsSection  id="projects" :sectionHeight="sectionHeight" />
+    <SkillsSection id="skills" :sectionHeight="sectionHeight" />
+    <WhySection id="why-me" :sectionHeight="sectionHeight" />
+    <WorkSection @toggle-modal="toggleModal($event)" id="work" :sectionHeight="sectionHeight" />
     <AppModal v-if="isModalOpen" :imgPath="modalImg" @toggle-modal="toggleModal" />
   </div>
 </template>

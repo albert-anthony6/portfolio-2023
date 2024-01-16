@@ -1,11 +1,26 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
+
+interface Props {
+  sectionHeight: string;
+}
+
+const props = defineProps<Props>();
 
 const why = ref();
 
 onMounted(() => {
-    why.value.style.minHeight = window.innerHeight + 'px';
+    // Setting initial section min-height
+    why.value.style.minHeight = props.sectionHeight;
 })
+
+// Update section min-height is this prop changes
+watch(
+    () => [props.sectionHeight],
+    (val) => {
+        why.value.style.minHeight = val;
+    },
+)
 </script>
 
 <template>

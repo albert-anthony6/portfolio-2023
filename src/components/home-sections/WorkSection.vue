@@ -11,6 +11,12 @@ import IconPorscheLogo from '@/assets/icons/icon_porsche_logo.svg';
 import IconUSPSLogo from '@/assets/icons/icon_usps_logo.svg';
 import projects from '@/utils/work-projects';
 
+interface Props {
+  sectionHeight: string;
+}
+
+const props = defineProps<Props>();
+
 const mq = useMq();
 
 const emit = defineEmits(['toggle-modal'])
@@ -32,8 +38,17 @@ const work = ref();
 const showCarousel = ref(false);
 
 onMounted(() => {
-    work.value.style.minHeight = window.innerHeight + 'px';
+    // Setting initial section min-height
+    work.value.style.minHeight = props.sectionHeight;
 })
+
+// Update section min-height is this prop changes
+watch(
+    () => [props.sectionHeight],
+    (val) => {
+        work.value.style.minHeight = val;
+    },
+)
 
 // Only show carousel on mobile
 watch(
