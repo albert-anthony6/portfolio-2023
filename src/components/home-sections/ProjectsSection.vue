@@ -101,7 +101,7 @@ watch(
                 <div class="card__side card__side--back" :class="{'unflip': isZooProjectRotated}">
                     <IconReactLogo class="react-logo" />
                     <h2>React Adventures</h2>
-                    <p>This zoo project, made with React18+Vite, is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a>, and is meant to show my UI building skills. It focuses on matching the design rather than functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
+                    <p>This zoo project, made with React18+Vite, is a clone of the <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a> and is meant to show my UI-building skills. It focuses on matching the design rather than the functionality of the buttons/inputs. I always liked the look of this site so I decided to recreate it without any official design comp!</p>
                     <h3>Tools Used</h3>
                     <ul class="list">
                         <li class="tag">React v18</li>
