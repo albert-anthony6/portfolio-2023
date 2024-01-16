@@ -66,7 +66,7 @@ watch(
         </div>
         <div class="typewriter"><span ref="typewriterText" /><span>|</span></div>
         <div class="foot-note">
-          <a href="#about" class="learn-more">
+          <a href="#why-me" class="learn-more">
             Learn More 
             <font-awesome-icon class="fa-icon" icon="fa-solid fa-arrow-right" />
           </a>
