@@ -116,7 +116,7 @@ watch(
                 <div class="content">
                     <div class="project-title">{{ project.title }}</div>
                     <p>{{ project.description }}</p>
-                    <button @click="emit('toggle-modal', `src/assets/images/work/${project.name}`)" type="button">View Image</button>
+                    <button @click="emit('toggle-modal', getImageUrl(project.name))" type="button">View Image</button>
                 </div>
                 <img :src="getImageUrl(project.name)" />
             </div>
