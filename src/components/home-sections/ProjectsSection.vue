@@ -135,7 +135,7 @@ watch(
           <IconReactLogo class="react-logo" />
           <h2>React Adventures</h2>
           <p>
-            This zoo project, made with React18+Vite, is a clone of the
+            This zoo project, made with React18+Vite, is inspired by the
             <a href="https://www.memphiszoo.org/" target="_blank">Memphis Zoo website</a> and is
             meant to show my UI-building skills. It focuses on matching the design rather than the
             functionality of the buttons/inputs. I always liked the look of this site so I decided
