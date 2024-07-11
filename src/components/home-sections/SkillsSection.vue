@@ -73,7 +73,7 @@ watch(
         <li class="tag">Stack Overflow</li>
         <li class="tag">Documentation</li>
         <li class="tag">Monday</li>
-        <li class="tag">Toggle</li>
+        <li class="tag">Toggl Track</li>
       </ul>
     </div>
   </section>
