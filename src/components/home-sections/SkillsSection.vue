@@ -51,6 +51,10 @@ watch(
         <li class="tag">Debugging</li>
         <li class="tag">Form Validation</li>
         <li class="tag">API Handling</li>
+        <li class="tag">Node.js</li>
+        <li class="tag">Express</li>
+        <li class="tag">MongoDB</li>
+        <li class="tag">Mongoose</li>
       </ul>
     </div>
     <h3 class="mobile-category">Tools</h3>
