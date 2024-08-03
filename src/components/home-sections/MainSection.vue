@@ -13,8 +13,9 @@ const intro = ref();
 onMounted(() => {
   // Setting initial section min-height
   intro.value.style.minHeight = props.sectionHeight;
-  
-  const textToType = 'I\'m a developer with five years of experience working on the front-end side of web applications. I began my journey in 2019 and have since really enjoyed my commitment to code daily. I strive to refine my skills with each project that I complete! My mindset is always to test new features, communicate with team members, and pay attention to detail. With that being said, I\'d love to share more detail about myself with you!';
+
+  const textToType =
+    "I'm a developer with nearly six years of experience. I began my journey in 2019 and have since really enjoyed my commitment to code daily. I strive to refine my skills with each project that I complete! My mindset is always to test new features, communicate with team members, and pay attention to detail. With that being said, I'd love to share more detail about myself with you!";
   let currentIndex = 0;
 
   function typeCharacter() {
@@ -27,15 +28,15 @@ onMounted(() => {
   }
 
   typeCharacter();
-})
+});
 
 // Update section min-height is this prop changes
 watch(
-    () => [props.sectionHeight],
-    (val) => {
-      intro.value.style.minHeight = val;
-    },
-)
+  () => [props.sectionHeight],
+  (val) => {
+    intro.value.style.minHeight = val;
+  }
+);
 </script>
 
 <template>
@@ -67,7 +68,7 @@ watch(
         <div class="typewriter"><span ref="typewriterText" /><span>|</span></div>
         <div class="foot-note">
           <a href="#why-me" class="learn-more">
-            Learn More 
+            Learn More
             <font-awesome-icon class="fa-icon" icon="fa-solid fa-arrow-right" />
           </a>
         </div>
@@ -97,23 +98,23 @@ watch(
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    
-  @include bp-lg-laptop {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  @include bp-custom-min(1360) {
-    max-width: 80%;
-  }
-  
-  @include bp-xxl-desktop-large {
-    max-width: 1400px;
-  }
+
+    @include bp-lg-laptop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include bp-custom-min(1360) {
+      max-width: 80%;
+    }
+
+    @include bp-xxl-desktop-large {
+      max-width: 1400px;
+    }
 
     .welcome {
       font-size: rem(8.6);
-      
+
       @include bp-lg-laptop {
         text-align: left;
         padding-right: 40px;
@@ -127,7 +128,7 @@ watch(
         line-height: 1;
         font-size: em(72, 10);
       }
-      
+
       h2 {
         font-weight: 500;
         font-size: em(52, 10);
@@ -143,9 +144,10 @@ watch(
         font-size: em(16, 10);
         padding: 5px 7px;
         margin: 10px auto 40px;
-        background: 
-          linear-gradient(rgb(139, 1, 202),rgb(133, 3, 111)) no-repeat, $darkest-neutral;
-        background-position: center; 
+        background:
+          linear-gradient(rgb(139, 1, 202), rgb(133, 3, 111)) no-repeat,
+          $darkest-neutral;
+        background-position: center;
         animation: 1s ease-in-out 0s 1 forwards background-slide;
 
         @include bp-lg-laptop {
@@ -168,7 +170,7 @@ watch(
       @include bp-sm-phone-landscape {
         font-size: rem(16);
       }
-    
+
       @include bp-lg-laptop {
         width: 45%;
         min-width: 400px;
@@ -182,7 +184,7 @@ watch(
 
         span {
           color: black;
-          
+
           &:last-of-type {
             animation: blink 0.7s infinite alternate linear;
           }
@@ -204,7 +206,7 @@ watch(
           &:hover {
             border-bottom: 2px solid $highlight;
           }
-  
+
           svg {
             font-size: rem(18);
             margin-bottom: -1px;
@@ -223,7 +225,7 @@ watch(
           height: 12px;
           margin: 0 3px;
           border-radius: 50%;
-          
+
           @include bp-sm-phone-landscape {
             width: 15px;
             height: 15px;
@@ -267,7 +269,7 @@ watch(
           background-image: linear-gradient(to right bottom, rgb(231, 100, 248), rgb(43, 3, 153));
           cursor: pointer;
           animation: 1s ease-in-out 0s 1 forwards test;
-          
+
           @include bp-sm-phone-landscape {
             width: 50px;
             height: 50px;
@@ -280,9 +282,9 @@ watch(
             display: block;
             background-image: linear-gradient(to right bottom, rgb(231, 100, 248), rgb(43, 3, 153));
             border-radius: 50%;
-            transition: all .2s ease;
+            transition: all 0.2s ease;
           }
-          
+
           &:hover::after {
             transform: scale(2);
             opacity: 0;
@@ -296,7 +298,7 @@ watch(
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 9;
-            
+
             @include bp-sm-phone-landscape {
               width: 30px;
               height: 30px;
@@ -333,7 +335,7 @@ watch(
 
       h2 {
         font-size: rem(35);
-  
+
         @include bp-sm-phone-landscape {
           font-size: rem(52);
         }
@@ -346,20 +348,20 @@ watch(
         @include bp-sm-phone-landscape {
           font-size: rem(30);
         }
-  
+
         &:last-child {
           animation-direction: alternate-reverse;
         }
       }
     }
-  
+
     .page-circle {
       position: absolute;
       width: 100%;
       height: 50vw;
       top: 0;
       left: 0;
-      background: linear-gradient(0deg, transparent 50%, rgba(17,7,20,0.7) 100%);
+      background: linear-gradient(0deg, transparent 50%, rgba(17, 7, 20, 0.7) 100%);
       border-radius: 50%;
       animation: 5s ease-in-out 0s infinite alternate expand;
       z-index: -1;
