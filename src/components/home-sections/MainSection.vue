@@ -45,7 +45,7 @@ watch(
       <div class="welcome">
         <h2><span class="text-cursive">Hello</span>, I'm</h2>
         <h1>Albert Valdes</h1>
-        <h2>Frontend Web Developer</h2>
+        <h2>Software Engineer</h2>
         <p>Welcome to my Portfolio</p>
       </div>
       <div class="first-words">
