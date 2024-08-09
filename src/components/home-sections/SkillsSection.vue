@@ -44,6 +44,8 @@ watch(
         <li class="tag">git</li>
         <li class="tag">Vue</li>
         <li class="tag">React</li>
+        <li class="tag">Redux</li>
+        <li class="tag">Next.js</li>
         <li class="tag">State Management</li>
         <li class="tag">JSX</li>
         <li class="tag">.NET</li>
